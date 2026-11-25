@@ -3,6 +3,7 @@
 ## 0.1.3 - 2026-11-25
 
 - Credits of the Moodle Observability family; first public release.
+- PHP 8.4: explicit escape character in str_getcsv() (no deprecation warning).
 
 ## 0.1.2 - 2026-11-24
 

@@ -420,7 +420,7 @@ final class analysis {
      */
     private static function read_expected(string $csv): array {
         $lines = preg_split('/\r\n|\r|\n/', trim($csv));
-        $header = array_map(fn($h) => strtolower(trim($h)), str_getcsv((string) array_shift($lines)));
+        $header = array_map(fn($h) => strtolower(trim($h)), str_getcsv((string) array_shift($lines), ',', '"', '\\'));
         $keycol = array_search('key', $header, true);
         if ($keycol === false) {
             $keycol = array_search('video_id', $header, true);
@@ -437,7 +437,7 @@ final class analysis {
             if (trim($line) === '') {
                 continue;
             }
-            $row = str_getcsv($line);
+            $row = str_getcsv($line, ',', '"', '\\');
             $provider = $providercol !== false ? strtolower(trim($row[$providercol] ?? '')) : 'youtube';
             $key = trim($row[$keycol] ?? '');
             if ($key !== '') {
