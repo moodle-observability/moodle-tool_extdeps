@@ -1,0 +1,8 @@
+{
+    "subplugintypes": {
+        "extdepsprovider": "provider"
+    },
+    "plugintypes": {
+        "extdepsprovider": "admin/tool/extdeps/provider"
+    }
+}
